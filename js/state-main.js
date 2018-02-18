@@ -138,22 +138,26 @@ var StateMain = {
         game.physics.arcade.collide(this.hero, this.ground);
         //collide the hero with the blocks
         game.physics.arcade.collide(this.hero, this.blocks, this.delayOver, null, this);
-        //collide the hero with the bird
-        game.physics.arcade.collide(this.hero, this.bird, this.delayOver, null, this);
+        
         //colide the blocks with the ground
         game.physics.arcade.collide(this.ground, this.blocks);
         //when only specifying one group, all children in that group will collide with each other
         game.physics.arcade.collide(this.blocks);
+        //collide the hero with the bird
+        game.physics.arcade.collide(this.hero, this.bird, this.delayOver, null, this);
+        
         //get the first child
         var fchild = this.blocks.getChildAt(0);
-        //if the bird has flown off screen, then reset it
-        if(this.bird.x < 0){
-            this.makeBird();
-        }
+        
         //if off the screen reset the blocks
         if(fchild.x < -game.width){
             this.makeBlocks();
         }
+        //if the bird has flown off screen, then reset it
+        if(this.bird.x < 0){
+            this.makeBird();
+        }
+        
         //check to see if the hero is at the top of the screen
         if(this.hero.y < this.hero.height){
             this.hero.body.velocity.y = 200;
@@ -165,7 +169,7 @@ var StateMain = {
     delayOver: function(){
         //Makes sure that the player can't jump after it's been hit
         this.clickLock = true;
-        game.time.events.add(Phaser.Timer.SECOND, this.gameOver(), this);
+        game.time.events.add(Phaser.Timer.SECOND, this.gameOver, this);
     },
     gameOver: function(){
         game.state.start("StateOver");
