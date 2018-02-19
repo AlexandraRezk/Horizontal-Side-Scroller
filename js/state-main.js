@@ -1,13 +1,15 @@
 var StateMain = {
     preload: function() {
         game.load.image("ground", "images/ground.png");
-        game.load.image("hero", "images/hero.png");
+        //game.load.image("hero", "images/hero.png");
+        game.load.atlasJSONHash('hero', 'images/explorer.png', 'images/explorer.json');
         game.load.image("bar", "images/powerbar.png");
         game.load.image("block", "images/block.png");
         game.load.image("bird", "images/bird.png");
         game.load.image("playAgain", "images/playAgain.png");
         game.load.image("clouds", "images/clouds.png");
     },
+    
     create: function() {
         //Makes it so the player can jump
         this.clickLock = false;
@@ -17,7 +19,15 @@ var StateMain = {
         //Add the ground
         this.ground = game.add.sprite(0, game.height * .9, "ground");
         //Add the hero
-        this.hero = game.add.sprite(game.width*.2, this.ground.y-25, "hero");
+        this.hero = game.add.sprite(game.width*.2, this.ground.y, "hero");
+        //makes animations
+        this.hero.animations.add("die", this.makeArray(0, 10), 12, false);
+        this.hero.animations.add("jump", this.makeArray(20, 30), 12, false);
+        this.hero.animations.add("run", this.makeArray(30, 40), 12, true);
+        this.hero.animations.play("run");
+        this.hero.width = game.width / 12;
+        this.hero.scale.y = this.hero.scale.x;
+        this.hero.anchor.set(0.5, 1);
         //Add the power bar just above the head of the hero
         this.powerBar = game.add.sprite(this.hero.x + 25, this.hero.y - 25, "bar");
         this.powerBar.width = 0;
@@ -52,6 +62,14 @@ var StateMain = {
         this.makeBird();
     },
     
+    makeArray: function(start, end){
+        var myArray=[];
+        for (var i = start; i < end; i++){
+            myArray.push(i);
+        }
+        return myArray;
+    },
+    
     //When mouseDown is called we start a timer to keep increasing the power
     //Set the timer at Phaser.Timer.SECOND/1000. This means the timer runs 1000 times a second. Gives a smooth power bar effect
     mouseDown: function() {
@@ -75,6 +93,7 @@ var StateMain = {
         this.power = 0;
         this.powerBar.width = 0;
         game.input.onDown.add(this.mouseDown, this);
+        this.hero.animations.play("jump");
     },
     //increase the power variable and increase the width of the powerBar
     //The powerBar will go no higher than 50 for now
@@ -132,10 +151,15 @@ var StateMain = {
         //set the bounc for the bird
         this.bird.body.bounce.set (2,2);
     },
+    onGround: function() {
+        if (this.hero){
+            this.hero.animations.play("run");
+        }
+    },
     
     update: function(){
         //Makes the hero not fall through the ground
-        game.physics.arcade.collide(this.hero, this.ground);
+        game.physics.arcade.collide(this.hero, this.ground, this.onGround, null, this);
         //collide the hero with the blocks
         game.physics.arcade.collide(this.hero, this.blocks, this.delayOver, null, this);
         
@@ -169,6 +193,10 @@ var StateMain = {
     delayOver: function(){
         //Makes sure that the player can't jump after it's been hit
         this.clickLock = true;
+       if (this.hero){
+           this.hero.animations.play("die");
+           this.hero.body.velocity.y = 100;
+       }
         game.time.events.add(Phaser.Timer.SECOND, this.gameOver, this);
     },
     gameOver: function(){
