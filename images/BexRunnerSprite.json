@@ -1,0 +1,220 @@
+{"frames": [
+
+{
+	"filename": "Bex Game Jump_00000.png",
+	"frame": {"x":1116,"y":254,"w":178,"h":263},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":178,"h":263},
+	"sourceSize": {"w":178,"h":263}
+},
+{
+	"filename": "Bex Game Jump_00001.png",
+	"frame": {"x":0,"y":517,"w":178,"h":263},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":178,"h":263},
+	"sourceSize": {"w":178,"h":263}
+},
+{
+	"filename": "Bex Game Jump_00002.png",
+	"frame": {"x":1472,"y":254,"w":178,"h":263},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":178,"h":263},
+	"sourceSize": {"w":178,"h":263}
+},
+{
+	"filename": "Bex Game Jump_00003.png",
+	"frame": {"x":1294,"y":254,"w":178,"h":263},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":178,"h":263},
+	"sourceSize": {"w":178,"h":263}
+},
+{
+	"filename": "Bex Game Jump_00004.png",
+	"frame": {"x":178,"y":517,"w":178,"h":263},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":178,"h":263},
+	"sourceSize": {"w":178,"h":263}
+},
+{
+	"filename": "Bex Game Long jump_00000.png",
+	"frame": {"x":197,"y":0,"w":197,"h":217},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":197,"h":217},
+	"sourceSize": {"w":197,"h":217}
+},
+{
+	"filename": "Bex Game Long jump_00001.png",
+	"frame": {"x":0,"y":0,"w":197,"h":217},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":197,"h":217},
+	"sourceSize": {"w":197,"h":217}
+},
+{
+	"filename": "Bex Game Long jump_00002.png",
+	"frame": {"x":591,"y":0,"w":197,"h":217},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":197,"h":217},
+	"sourceSize": {"w":197,"h":217}
+},
+{
+	"filename": "Bex Game Long jump_00003.png",
+	"frame": {"x":394,"y":0,"w":197,"h":217},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":197,"h":217},
+	"sourceSize": {"w":197,"h":217}
+},
+{
+	"filename": "Bex Game Ouch_00000.png",
+	"frame": {"x":860,"y":517,"w":165,"h":268},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":165,"h":268},
+	"sourceSize": {"w":165,"h":268}
+},
+{
+	"filename": "Bex Game Ouch_00001.png",
+	"frame": {"x":1239,"y":517,"w":165,"h":268},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":165,"h":268},
+	"sourceSize": {"w":165,"h":268}
+},
+{
+	"filename": "Bex Game Ouch_00002.png",
+	"frame": {"x":1404,"y":517,"w":190,"h":268},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":190,"h":268},
+	"sourceSize": {"w":190,"h":268}
+},
+{
+	"filename": "Bex Game Ouch_00003.png",
+	"frame": {"x":1025,"y":517,"w":214,"h":268},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":214,"h":268},
+	"sourceSize": {"w":214,"h":268}
+},
+{
+	"filename": "Bex Game Ouch_00004.png",
+	"frame": {"x":611,"y":517,"w":249,"h":268},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":249,"h":268},
+	"sourceSize": {"w":249,"h":268}
+},
+{
+	"filename": "Bex Game Ouch_00005.png",
+	"frame": {"x":356,"y":517,"w":255,"h":268},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":255,"h":268},
+	"sourceSize": {"w":255,"h":268}
+},
+{
+	"filename": "Bex Game Run_00000.png",
+	"frame": {"x":558,"y":254,"w":186,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":186,"h":260},
+	"sourceSize": {"w":186,"h":260}
+},
+{
+	"filename": "Bex Game Run_00001.png",
+	"frame": {"x":372,"y":254,"w":186,"h":257},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":186,"h":257},
+	"sourceSize": {"w":186,"h":257}
+},
+{
+	"filename": "Bex Game Run_00002.png",
+	"frame": {"x":186,"y":254,"w":186,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":186,"h":256},
+	"sourceSize": {"w":186,"h":256}
+},
+{
+	"filename": "Bex Game Run_00003.png",
+	"frame": {"x":788,"y":0,"w":186,"h":250},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":186,"h":250},
+	"sourceSize": {"w":186,"h":250}
+},
+{
+	"filename": "Bex Game Run_00004.png",
+	"frame": {"x":1532,"y":0,"w":186,"h":254},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":186,"h":254},
+	"sourceSize": {"w":186,"h":254}
+},
+{
+	"filename": "Bex Game Run_00005.png",
+	"frame": {"x":744,"y":254,"w":186,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":186,"h":260},
+	"sourceSize": {"w":186,"h":260}
+},
+{
+	"filename": "Bex Game Run_00006.png",
+	"frame": {"x":930,"y":254,"w":186,"h":260},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":186,"h":260},
+	"sourceSize": {"w":186,"h":260}
+},
+{
+	"filename": "Bex Game Run_00007.png",
+	"frame": {"x":0,"y":254,"w":186,"h":255},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":186,"h":255},
+	"sourceSize": {"w":186,"h":255}
+},
+{
+	"filename": "Bex Game Run_00008.png",
+	"frame": {"x":974,"y":0,"w":186,"h":250},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":186,"h":250},
+	"sourceSize": {"w":186,"h":250}
+},
+{
+	"filename": "Bex Game Run_00009.png",
+	"frame": {"x":1346,"y":0,"w":186,"h":254},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":186,"h":254},
+	"sourceSize": {"w":186,"h":254}
+},
+{
+	"filename": "Bex Game Run_00010.png",
+	"frame": {"x":1160,"y":0,"w":186,"h":253},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":186,"h":253},
+	"sourceSize": {"w":186,"h":253}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "BexRunnerSprite.png",
+	"format": "RGBA8888",
+	"size": {"w":1718,"h":785},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:0c6a88bcdf78e14b4d43310cc8b44b35:a5a797dac78cfc41f54f318c8fc507d4:b9d73945dc1bcd16bb1730975660ec1a$"
+}
+}

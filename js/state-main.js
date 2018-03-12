@@ -1,7 +1,7 @@
 var StateMain = {
     preload: function() {
         game.load.image("grass", "images/grass.png");
-        game.load.atlasJSONHash('hero', 'images/explorer.png', 'images/explorer.json');
+        game.load.atlasJSONHash('hero', 'images/BexRunnerSprite.png', 'images/BexRunnerSprite.json');
         game.load.image("bar", "images/powerbar.png");
         game.load.image("block", "images/block.png");
         game.load.atlasJSONHash("bird", "images/bird.png", "images/bird.json");
@@ -37,11 +37,11 @@ var StateMain = {
         //Add the hero
         this.hero = game.add.sprite(game.width*.2, this.ground.y, "hero");
         //makes animations
-        this.hero.animations.add("die", this.makeArray(0, 10), 12, false);
-        this.hero.animations.add("jump", this.makeArray(20, 30), 12, false);
-        this.hero.animations.add("run", this.makeArray(30, 40), 12, true);
+        this.hero.animations.add("die", this.makeArray(10, 15), 12, false);
+        this.hero.animations.add("jump", this.makeArray(0, 4), 12, false);
+        this.hero.animations.add("run", this.makeArray(16, 26), 12, true);
         this.hero.animations.play("run");
-        this.hero.width = game.width / 12;
+        this.hero.width = game.width / 9;
         this.hero.scale.y = this.hero.scale.x;
         this.hero.anchor.set(0.5, 1);
         //Add the power bar just above the head of the hero
