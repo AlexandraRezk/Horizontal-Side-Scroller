@@ -3,7 +3,7 @@ var StateMain = {
         game.load.image("sidewalk", "images/sidewalk.png");
         game.load.atlasJSONHash('hero', 'images/BexRunnerSprite.png', 'images/BexRunnerSprite.json');
         game.load.image("bar", "images/powerbar.png");
-        game.load.image("toybox", "images/Toywrapper.png");
+        game.load.image("toybox", "images/toyWrapper.png");
         game.load.atlasJSONHash("toy", "images/90sToySprite.png", "images/90sToySprite.json");
         game.load.image("playAgain", "images/playAgain.png");
         game.load.image("clouds", "images/clouds.png");
