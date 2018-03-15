@@ -24,9 +24,9 @@ var StateMain = {
         this.background.width = game.width;
         this.background.height = game.height;
         //mountains
-        this.city1 = game.add.tileSprite(0,0,game.width,game.height/2,"city1");
+        this.city1 = game.add.tileSprite(0,0,game.width,417,"city1");
         this.city1.y = game.height-this.city1.height;
-        this.trees = game.add.tileSprite(0,0,game.width,game.height/3,"trees");
+        this.trees = game.add.tileSprite(0,0,game.width,323,"trees");
         this.trees.y = game.height-this.trees.height;
         this.city1.autoScroll(-50,0);
         this.trees.autoScroll(-150,0);
