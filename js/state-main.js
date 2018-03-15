@@ -1,16 +1,16 @@
 var StateMain = {
     preload: function() {
-        game.load.image("grass", "images/grass.png");
+        game.load.image("sidewalk", "images/sidewalk.png");
         game.load.atlasJSONHash('hero', 'images/BexRunnerSprite.png', 'images/BexRunnerSprite.json');
         game.load.image("bar", "images/powerbar.png");
-        game.load.image("block", "images/block.png");
-        game.load.atlasJSONHash("bird", "images/bird.png", "images/bird.json");
+        game.load.image("toybox", "images/Toywrapper.png");
+        game.load.atlasJSONHash("toy", "images/90sToySprite.png", "images/90sToySprite.json");
         game.load.image("playAgain", "images/playAgain.png");
         game.load.image("clouds", "images/clouds.png");
         //Background Images
         game.load.image("background", "images/background.png");
-        game.load.image("mountains1", "images/mountains1.png");
-        game.load.image("mountains2", "images/mountains2.png");
+        game.load.image("city1", "images/city1.png");
+        game.load.image("trees", "images/trees.png");
     },
     
     create: function() {
@@ -24,14 +24,14 @@ var StateMain = {
         this.background.width = game.width;
         this.background.height = game.height;
         //mountains
-        this.mountain1 = game.add.tileSprite(0,0,game.width,game.height/2,"mountains1");
-        this.mountain1.y = game.height-this.mountain1.height;
-        this.mountain2 = game.add.tileSprite(0,0,game.width,game.height/3,"mountains2");
-        this.mountain2.y = game.height-this.mountain2.height;
-        this.mountain1.autoScroll(-50,0);
-        this.mountain2.autoScroll(-150,0);
+        this.city1 = game.add.tileSprite(0,0,game.width,game.height/2,"city1");
+        this.city1.y = game.height-this.city1.height;
+        this.trees = game.add.tileSprite(0,0,game.width,game.height/3,"trees");
+        this.trees.y = game.height-this.trees.height;
+        this.city1.autoScroll(-50,0);
+        this.trees.autoScroll(-150,0);
         //Add the ground
-        this.ground = game.add.tileSprite(0,game.height*.9,game.width,50,"grass");
+        this.ground = game.add.tileSprite(0,game.height*.9,game.width,50,"sidewalk");
         //makes the tiles scroll by x so leave y at 0
         this.ground.autoScroll(-150,0);
         //Add the hero
@@ -75,7 +75,7 @@ var StateMain = {
         this.blocks.y = this.ground.y - 50;
         
         //Make a bird
-        this.makeBird();
+        this.makeToy();
     },
     
     makeArray: function(start, end){
@@ -130,7 +130,7 @@ var StateMain = {
         //range for how many blocks
         var wallHeight = game.rnd.integerInRange(1, 4);
         for (var i = 0; i < wallHeight; i++){
-            var block = game.add.sprite(0, -i * 50, "block");
+            var block = game.add.sprite(0, -i * 50, "toybox");
             this.blocks.add(block);
         }
         this.blocks.x = game.width - this.blocks.width;
@@ -151,28 +151,28 @@ var StateMain = {
         });
     },
     
-    makeBird: function(){
+    makeToy: function(){
         //if the bird already exists, then destroy it
-        if(this.bird){
-            this.bird.destroy();
+        if(this.toy){
+            this.toy.destroy();
         }
         //pick a number at the top of the screen between 10% and 40% of the height of the screen
-        var birdY = game.rnd.integerInRange(game.height * .1, game.height * .4);
+        var toyY = game.rnd.integerInRange(game.height * .1, game.height * .4);
         //Add the bird sprite to the game
-        this.bird = game.add.sprite(game.width + 100, birdY, "bird");
-        this.bird.animations.add("fly", this.makeArray(0,8),12,true);
-        this.bird.animations.play("fly");
+        this.toy = game.add.sprite(game.width + 100, toyY, "toy");
+        this.toy.animations.add("fly", this.makeArray(0,8),12,true);
+        this.toy.animations.play("fly");
         //enable the sprite for physics
-        game.physics.enable(this.bird, Phaser.Physics.ARCADE);
+        game.physics.enable(this.toy, Phaser.Physics.ARCADE);
         //set the x velocity at -200 which is a little faster than the blocks
-        this.bird.body.velocity.x = -200;
+        this.toy.body.velocity.x = -200;
         //set the bounc for the bird
-        this.bird.body.bounce.set (2,2);
+        this.toy.body.bounce.set (2,2);
         //to resize the bird to match the game's width
-        this.bird.width = game.width*.1;
-        this.bird.scale.y = this.bird.scale.x;
+        this.toy.width = game.width*.1;
+        this.toy.scale.y = this.toy.scale.x;
         //reverse the direction the bird is facing to go to fly in the right direction
-        this.bird.scale.x = -this.bird.scale.x;
+        this.toy.scale.x = -this.toy.scale.x;
     },
     onGround: function() {
         if (this.hero){
@@ -191,7 +191,7 @@ var StateMain = {
         //when only specifying one group, all children in that group will collide with each other
         game.physics.arcade.collide(this.blocks);
         //collide the hero with the bird
-        game.physics.arcade.collide(this.hero, this.bird, this.delayOver, null, this);
+        game.physics.arcade.collide(this.hero, this.toy, this.delayOver, null, this);
         
         //get the first child
         var fchild = this.blocks.getChildAt(0);
@@ -201,8 +201,8 @@ var StateMain = {
             this.makeBlocks();
         }
         //if the bird has flown off screen, then reset it
-        if(this.bird.x < 0){
-            this.makeBird();
+        if(this.toy.x < 0){
+            this.makeToy();
         }
         
         //check to see if the hero is at the top of the screen
